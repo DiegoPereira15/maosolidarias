@@ -1,28 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #f3f7f3;
-}
-
-.container {
-  max-width: 500px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-}
-
-input, select, button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-}
-
-button {
-  background: #2e7d32;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 
 .tela {
@@ -30,12 +13,122 @@ button {
 }
 
 .tela.ativa {
-  display: block;
+  display: flex;
 }
 
-.imagem-login {
-  width: 220px;
+.tela-login,
+.tela-menu {
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: url("imagens/fundo-login.png") no-repeat center center;
+  background-size: cover;
+}
+
+.overlay-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.menu-card {
+  max-width: 480px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #1f6b2a;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.perfil {
+  text-align: center;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+label {
   display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 12px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-verde {
+  background: #2e7d32;
+  color: white;
+}
+
+.btn-verde:hover {
+  background: #1f5f27;
+}
+
+.btn-claro {
+  background: #66bb6a;
+  color: white;
+}
+
+.btn-claro:hover {
+  background: #4caf50;
+}
+
+.btn-cinza {
+  background: #8a8a8a;
+  color: white;
+}
+
+.btn-cinza:hover {
+  background: #737373;
+}
+
+.mensagem {
+  margin-top: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.erro {
+  color: #c62828;
+}
+
+.sucesso {
+  color: #2e7d32;
+}
+
+#menuDinamico .btn {
+  margin-bottom: 10px;
 }
