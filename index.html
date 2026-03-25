@@ -2,71 +2,77 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Mãos Solidárias</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>Mãos Solidárias</title>
+  <link rel="stylesheet" href="app.css">
 </head>
-
 <body>
 
   <!-- LOGIN -->
-  <div id="tela-login" class="tela ativa">
-    <div class="container">
-
-      <img src="imagens/login.png" class="imagem-login">
-
+  <div id="tela-login" class="tela ativa tela-login">
+    <div class="overlay-card">
       <h1>Mãos Solidárias</h1>
+      <p class="subtitulo">Entre na sua conta</p>
 
-      <label>Login</label>
-      <input type="text" id="login-entrar">
+      <label for="login-entrar">Login</label>
+      <input type="text" id="login-entrar" placeholder="Digite seu login">
 
-      <label>Senha</label>
-      <input type="password" id="senha-entrar">
+      <label for="senha-entrar">Senha</label>
+      <input type="password" id="senha-entrar" placeholder="Digite sua senha">
 
-      <button onclick="entrarSistema()">Entrar</button>
-      <button onclick="mostrarTela('tela-cadastro')">Cadastrar</button>
+      <button class="btn btn-verde" onclick="entrarSistema()">Entrar</button>
+      <button class="btn btn-claro" onclick="mostrarTela('tela-cadastro')">Cadastrar</button>
 
-      <div id="mensagem-login"></div>
+      <div id="mensagem-login" class="mensagem"></div>
     </div>
   </div>
 
   <!-- CADASTRO -->
-  <div id="tela-cadastro" class="tela">
-    <div class="container">
-
+  <div id="tela-cadastro" class="tela tela-login">
+    <div class="overlay-card">
       <h2>Cadastro</h2>
 
-      <input type="text" id="nome-cadastro" placeholder="Nome">
-      <input type="email" id="email-cadastro" placeholder="Email">
+      <label for="nome-cadastro">Nome</label>
+      <input type="text" id="nome-cadastro" placeholder="Digite seu nome">
 
+      <label for="email-cadastro">Email</label>
+      <input type="email" id="email-cadastro" placeholder="Digite seu email">
+
+      <label for="tipo-cadastro">Tipo de usuário</label>
       <select id="tipo-cadastro">
-        <option>Doador</option>
-        <option>Voluntário</option>
-        <option>ONG</option>
-        <option>Recebedor</option>
+        <option value="">Selecione</option>
+        <option value="Doador">Doador</option>
+        <option value="Voluntário">Voluntário</option>
+        <option value="ONG">ONG</option>
+        <option value="Recebedor">Recebedor</option>
       </select>
 
-      <input type="text" id="login-cadastro" placeholder="Login">
-      <input type="password" id="senha-cadastro" placeholder="Senha">
+      <label for="login-cadastro">Login</label>
+      <input type="text" id="login-cadastro" placeholder="Crie um login">
 
-      <button onclick="cadastrarUsuario()">Cadastrar</button>
-      <button onclick="mostrarTela('tela-login')">Voltar</button>
+      <label for="senha-cadastro">Senha</label>
+      <input type="password" id="senha-cadastro" placeholder="Crie uma senha">
 
+      <button class="btn btn-verde" onclick="cadastrarUsuario()">Cadastrar</button>
+      <button class="btn btn-cinza" onclick="mostrarTela('tela-login')">Voltar</button>
+
+      <div id="mensagem-cadastro" class="mensagem"></div>
     </div>
   </div>
 
-  <!-- PRINCIPAL -->
-  <div id="tela-principal" class="tela">
-    <div class="container">
+  <!-- MENU PRINCIPAL -->
+  <div id="tela-principal" class="tela tela-menu">
+    <div class="overlay-card menu-card">
       <h2>Menu Principal</h2>
+      <p class="subtitulo">Bem-vindo, <span id="nomeUsuario"></span></p>
+      <p class="perfil">Perfil: <span id="tipoUsuario"></span></p>
+
       <div id="menuDinamico"></div>
+
+      <button class="btn btn-cinza" onclick="logout()">Sair</button>
     </div>
   </div>
 
-  <!-- JS -->
   <script src="app.js"></script>
-
 </body>
 </html>
