@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mãos Solidárias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div id="tela-login" class="tela ativa">
+    <div class="container">
+
+      <img src="imagens/login.png" class="imagem-login">
+
+      <h1>Mãos Solidárias</h1>
+
+      <label>Login</label>
+      <input type="text" id="login-entrar">
+
+      <label>Senha</label>
+      <input type="password" id="senha-entrar">
+
+      <button onclick="entrarSistema()">Entrar</button>
+      <button onclick="mostrarTela('tela-cadastro')">Cadastrar</button>
+
+      <div id="mensagem-login"></div>
+    </div>
+  </div>
+
+  <!-- CADASTRO -->
+  <div id="tela-cadastro" class="tela">
+    <div class="container">
+
+      <h2>Cadastro</h2>
+
+      <input type="text" id="nome-cadastro" placeholder="Nome">
+      <input type="email" id="email-cadastro" placeholder="Email">
+
+      <select id="tipo-cadastro">
+        <option>Doador</option>
+        <option>Voluntário</option>
+        <option>ONG</option>
+        <option>Recebedor</option>
+      </select>
+
+      <input type="text" id="login-cadastro" placeholder="Login">
+      <input type="password" id="senha-cadastro" placeholder="Senha">
+
+      <button onclick="cadastrarUsuario()">Cadastrar</button>
+      <button onclick="mostrarTela('tela-login')">Voltar</button>
+
+    </div>
+  </div>
+
+  <!-- PRINCIPAL -->
+  <div id="tela-principal" class="tela">
+    <div class="container">
+      <h2>Menu Principal</h2>
+      <div id="menuDinamico"></div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
+</body>
+</html>
